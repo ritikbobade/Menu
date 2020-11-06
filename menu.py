@@ -42,8 +42,10 @@ while True:
 			os.system("hadoop-daemon.sh start namenode")
 		elif int(nm)==4:
 			os.system("hadoop-daemon.sh start datanode")
-		else:
+		elif int(nm)==4:
 			os.system("jps")
+		else:
+			print("Invalid choice")
 	elif int(ch)==2:
 		print("""
 		Press 1:To Configure aws 
@@ -60,6 +62,8 @@ while True:
 			os.system("aws ec2 create-volume help")
 		elif int(aw)==4:
 			os.system("aws s3 help")
+		else:
+			print("Invalid choice")
 		
 	elif int(ch)==3:
 		print("""
@@ -72,8 +76,10 @@ while True:
 			os.system("jupyter notebook --allow-root")
 		elif int(ml)==2:
 			os.system("pip3 install numpy")
-		else:
+		elif int(ml)==3:
 			os.system("pip3 install pandas")
+		else:
+			print("Invalid choice")
 	elif int(ch)==4:
 		print("""
 		Press 1:To see running docker containers
@@ -91,6 +97,8 @@ while True:
 			os.system("docker run -it ubuntu:14.04")
 		elif int(dc)==4:
 			os.system("docker run -it ubuntu:20.10")
+		else:
+			print("Invalid choice")
 	elif int(ch)==5:
 		print("""
 		Press 1:To check time taken by your code
@@ -106,7 +114,7 @@ while True:
 			mm=input()
 			os.system("df {}".format(mm))
 		else:	
-			exit()
+			print("Invalid choice")
 	elif int(ch)==6:
 		print("""
 		Press 1:To check python version
@@ -119,7 +127,7 @@ while True:
 		elif int(ph)==2:
 			os.system("python3")
 		else:
-			exit()
+			print("Invalid choice")
 
 	elif int(ch)==7:
 		print("""
@@ -134,7 +142,9 @@ while True:
 		elif int(pr)==2:
 			ds=input("Enter the disk name")
 			os.system("fdisk /dev/{}".format(ds))
-		else:	
+		elif int(pr)==3:	
 			os.system("df -h")
+		else:
+			print("Invalid choice")
 	else:
 		exit()
