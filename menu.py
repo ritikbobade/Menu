@@ -6,7 +6,7 @@ os.system("tput setaf 7")
 print("                                       -------------------                   ")
 
 
-password=getpass.getpass("Enter your Password")
+password=getpass.getpass("Enter your Password:")
 if password!="redhat":
 	print("Access Denied")
 	exit()
@@ -24,8 +24,9 @@ while True:
 	Press 7.Partitions
 	Press 8.Exit
 	""")
-	ch=input("Enter your choice")
+	ch=input("Enter your choice:")
 	if int(ch)==1:
+	   while True:	
 		print("""
 		Press 1:To open hdfs-site.xml file
 		Press 2:To open core-site.xml file
@@ -33,7 +34,7 @@ while True:
 		Press 4: To start datanode
 		Press 5: To run jps 
 		""")
-		nm=input("Enter your choice")
+		nm=input("Enter your choice:")
 		if int(nm)==1:
 			os.system("cd /etc/hadoop; vi hdfs-site.xml")
 		elif int(nm)==2:
@@ -46,7 +47,11 @@ while True:
 			os.system("jps")
 		else:
 			print("Invalid choice")
+           else:
+		print("exit()")
+		
 	elif int(ch)==2:
+	   while True:
       		print("""
 		Press 1: To configure
       		Press 2: To generate key-pair
@@ -78,9 +83,11 @@ while True:
         		os.system("aws s3 help")
       		else:
         		print("Invalid choice")
-    	
+    	   else:
+		print("exit()")
 		
 	elif int(ch)==3:
+	   while True:
 		print("""
 		Press 1: To launch jupyter notebook
 		Press 2: To install numpy
@@ -95,7 +102,11 @@ while True:
 			os.system("pip3 install pandas")
 		else:
 			print("Invalid choice")
+	   else:
+		print("exit()")
+		
 	elif int(ch)==4:
+	   while True:
 		print("""
 		Press 1:To see running docker containers
 		Press 2:To run Ubuntu:18.10
@@ -114,15 +125,19 @@ while True:
 			os.system("docker run -it ubuntu:20.10")
 		else:
 			print("Invalid choice")
+	   else:
+		print("exit()")
+		
 	elif int(ch)==5:
+	   while True:
 		print("""
 		Press 1:To check time taken by your code
 		Press 2:Check memory of your code
 		Press 3:Exit
 		""")	
-		da=input("Enter your Choice")
+		da=input("Enter your Choice:")
 		if int(da)==1:
-			cd=("Type your command to run your code")
+			cd=("Type your command to run your code:")
 			os.system("time {}".format(cd))
 		elif int(da)==2:	
 			print("Enter your desitnation location whose memory you want 					to check e.g. /home/Desktop/menuy.py")
@@ -130,27 +145,34 @@ while True:
 			os.system("df {}".format(mm))
 		else:	
 			print("Invalid choice")
+	   else:
+		print("exit()")
+		
 	elif int(ch)==6:
+	   while True:
 		print("""
 		Press 1:To check python version
 		Press 2.To run python interpreter
 		Press 3.Exit
 		""")
-		ph=input("Enter your choice")
+		ph=input("Enter your choice:")
 		if int(ph)==1:
 			os.system("python3 --version")
 		elif int(ph)==2:
 			os.system("python3")
 		else:
 			print("Invalid choice")
+	   else:
+		print("exit()")
 
 	elif int(ch)==7:
+	   while True:
 		print("""
 		Press 1:To check disk information
 		Press 2:To partition in a particular disk
 		Press 3: To check the mount state
 		""")
-		pr=input("Enter your Choice")
+		pr=input("Enter your Choice:")
 		
 		if int(pr)==1:
 			os.system("fdisk -l")
@@ -161,5 +183,7 @@ while True:
 			os.system("df -h")
 		else:
 			print("Invalid choice")
+	   else:
+		print("exit()")
 	else:
-		exit()
+		print("exit()")
